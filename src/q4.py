@@ -16,5 +16,7 @@ cpts = bn.compute_cpts_from_dat(model.graph, model.domains, model.data_idx, data
 
 bn.print_cpt("A", cpts, model.graph, model.variable_map)
 bn.print_cpt("BP", cpts, model.graph, model.variable_map)
+bn.print_cpt("HD", cpts, model.graph, model.variable_map)
+bn.print_cpt("HR", cpts, model.graph, model.variable_map)
 
     

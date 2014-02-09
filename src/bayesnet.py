@@ -43,7 +43,7 @@ def print_cpt(variable, cpts, graph, variable_map):
     cpt = cpts[variable]
     parents = graph[variable]
     
-    print "P(%s%s)" % (variable, "|"+"|".join(parents) if parents else "")
+    print "P(%s%s)" % (variable, "|"+",".join(parents) if parents else "")
     
     
     
