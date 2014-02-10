@@ -112,7 +112,41 @@ $P(HR\mid HD,BP,A)$
 \begin{enumerate}
 \item
 
+\begin{align*}
+P(CH=ch\mid \ldots) &= \\
+&\frac{P(CH=ch\mid A=2,G=M)P(HD=No\mid CH=ch,BP=L)}{\sum_{ch \in \{H,L\}}P(CH=ch\mid A=2,G=M)P(HD=No\mid CH=ch,BP=L)}
+\end{align*}
+
+Distribution over query variables based on first training file:
+
+\begin{tabular}{ll}
+$P(CH=ch)$ & $ch$ \\ \hline
+0.13470681 & Low \\
+0.86529319 & High
+\end{tabular}
+
 \item
+Let
+\begin{align*}
+N = &\sum_{g \in \{M,F\}}P(BP=bp|G=g)\\
+&\sum_{g \in \{M,F\}}P(G=g)\\
+&P(CH=H|A=2,BP=bp)\\
+&P(HD=No|CH=H,BP=bp)\\
+&P(HR=H|A=2,BP=bp,HD=No)
+\end{align*}
+
+then,
+\begin{align*}
+P(BP=bp\mid \ldots) = \frac{N}{\sum_{bp\in\{H,L\}}N}
+\end{align*}
+
+Distribution over query variables based on first training file:
+
+\begin{tabular}{ll}
+$P(BP=bp)$ & $bp$ \\ \hline
+0.45509533 & Low \\
+0.54490467 & High
+\end{tabular}
 
 \end{enumerate}
 
