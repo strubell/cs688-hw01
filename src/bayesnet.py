@@ -26,7 +26,7 @@ def compute_cpts_from_dat(graph, domains, data_idx, data_fname):
         # read in counts from data (need to subtract 1 to get 0 indexing)
         for i in raw_data[:, indices]-1:
             cpt[tuple(i)] += 1.0
-              
+             
         # normalize to get cpt rather than counts
         sums = np.sum(cpt, axis=0)
         if sums.shape:
