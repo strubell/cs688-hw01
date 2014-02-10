@@ -1,7 +1,7 @@
 '''
 CS688 HW01: Problem 5
 
-
+Perform some queries on the network.
 
 @author: Emma Strubell
 '''
