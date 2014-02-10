@@ -31,9 +31,8 @@ def compute_cpts_from_dat(graph, domains, data_idx, data_fname):
         sums = np.sum(cpt, axis=0)
         if sums.shape:
             flatsums = sums.reshape(sums.shape[0], -1).flatten()         
-            flatcounts = cpt.reshape(cpt.shape[0], -1)         
-            flatcounts /= flatsums
-            cpt = flatcounts.reshape(cpt.shape)
+            flatcounts = cpt.reshape(cpt.shape[0], -1)
+            cpt = (flatcounts/flatsums).reshape(cpt.shape)
         else:
             cpt = cpt/sums
         cpts[key] = cpt
