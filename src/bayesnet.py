@@ -39,6 +39,34 @@ def compute_cpts_from_dat(graph, domains, data_idx, data_fname):
     print
     return cpts
 
+def test(unknown, cpts, data, graph, domains, data_idx):
+    unk_domain_size = domains[unknown]
+    unk_dat_idx = data_idx[unknown]
+    probs = np.zeros((len(data),unk_domain_size))
+    true_classes = np.empty(len(data))
+    for i,d in enumerate(data-1): # shift everything down by 1 to be zero-indexed
+        # grab true classification
+        true_classes[i] = d[unk_dat_idx]
+        # predict probability dist over classes given training data
+        total = 0.0
+        for unknown_val in range(unk_domain_size):
+            prod = 1.0
+            for key, value in graph.iteritems():
+                # get necessary indices into data
+                settings = d[[data_idx[key]] + map(lambda x: data_idx[x], value)]
+                # get index that should be replaced with unknown setting
+                # and replace with unknown variable setting if necessary
+                try :
+                    unk_idx = 0 if key == unknown else value.index(unknown)+1
+                    settings[unk_idx] = unknown_val
+                except ValueError:
+                    pass
+                prod *= cpts[key][tuple(settings)]
+            probs[i,unknown_val] += prod
+            total += prod
+        probs[i] /= total
+    return np.sum((np.argmax(probs,axis=1) == true_classes).astype(float))/len(data)
+
 def print_cpt(variable, cpts, graph, variable_map):
     cpt = cpts[variable]
     parents = graph[variable]
