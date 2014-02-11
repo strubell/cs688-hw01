@@ -1,5 +1,5 @@
 '''
-CS688 HW01: Problem 5
+CS688 HW01: Question 5
 
 Perform some queries on the network.
 
@@ -14,8 +14,6 @@ data_fname = "../data/train/data-train-1.txt"
 
 # populate CPTs from the hw model
 cpts = bn.compute_cpts_from_dat(model.graph, model.domains, model.data_idx, data_fname)
-
-
 
 '''
 P(CH=ch|...) = 

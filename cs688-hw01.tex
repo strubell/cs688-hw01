@@ -128,11 +128,12 @@ $P(CH=ch)$ & $ch$ \\ \hline
 \item
 Let
 \begin{align*}
-N = &\sum_{g \in \{M,F\}}P(BP=bp|G=g)\\
-&\sum_{g \in \{M,F\}}P(G=g)\\
-&P(CH=H|A=2,BP=bp)\\
-&P(HD=No|CH=H,BP=bp)\\
-&P(HR=H|A=2,BP=bp,HD=No)
+N = \sum_{g \in \{M,F\}}\Bigl[
+&P(BP=bp|G=g)
+P(G=g)
+P(CH=H|A=2,BP=bp)\\
+&P(HD=No|CH=H,BP=bp)
+P(HR=H|A=2,BP=bp,HD=No)\Bigr]
 \end{align*}
 
 then,
@@ -151,6 +152,29 @@ $P(BP=bp)$ & $bp$ \\ \hline
 \end{enumerate}
 
 \item % Question 6
+\begin{enumerate}
+\item Nothing to report
+
+\item
+Let
+\begin{align*}
+N = 
+&P(HD=hd\mid CH=ch,BP=bp)
+P(HR=hr\mid A=a,BP=bp,HD=hd)\\
+&P(CP=cp\mid HD=hd)
+P(EIA=eia\mid HD=hd)
+P(ECG=ecg\mid HD=hd)
+\end{align*}
+
+then,
+\begin{align*}
+P(HD=hd\mid \ldots) = \frac{N}{\sum_{hd\in\{Yes,No\}}N}
+\end{align*}
+
+\item
+Five-fold cross validation mean: 0.753333333333, standard deviation: 0.0385861230093.
+
+\end{enumerate}
 
 \item % Question 7
 
