@@ -1,5 +1,5 @@
 '''
-CS688 HW01: Problem 4
+CS688 HW01: Given Bayes net
 
 Data format:
 

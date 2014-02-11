@@ -1,7 +1,7 @@
 '''
 CS688 HW01: Problem 4
 
-
+Generate CPTs for some variables in the network.
 
 @author: Emma Strubell
 '''

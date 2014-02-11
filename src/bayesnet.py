@@ -61,6 +61,7 @@ def test(unknown, cpts, data, graph, domains, data_idx):
                     settings[unk_idx] = unknown_val
                 except ValueError:
                     pass
+                #print "key:", key, "settings:", settings
                 prod *= cpts[key][tuple(settings)]
             probs[i,unknown_val] += prod
             total += prod
